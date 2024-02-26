@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import { Spotlight } from "@/components/ui/Spotlight";
+import { BackgroundBeams } from "@/components/ui/background-beams";
+import { WavyBackground } from "@/components/ui/wavy-background";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +20,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {/* <Navbar /> */}
+        {/* <div className="relative min-w-full min-h-[calc(100vh-73px)] sm:min-h-[calc(100vh-65px)]"> */}
+          <WavyBackground className="min-h-screen">
+            {children}
+            {/* <BackgroundBeams /> */}
+          </WavyBackground>
+        {/* </div> */}
+      </body>
     </html>
   );
 }
